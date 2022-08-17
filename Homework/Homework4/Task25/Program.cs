@@ -4,6 +4,7 @@ Console.WriteLine("Введите число: ");
 int numA = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите степень числа: ");
 int numB = int.Parse(Console.ReadLine());
+
 int RaisedToThePower(int A, int B)
 {
     int result=1;
@@ -13,6 +14,7 @@ int RaisedToThePower(int A, int B)
     }
     return result;
 }
+
 if (numB>0)
 {
   Console.WriteLine(RaisedToThePower(numA, numB));
