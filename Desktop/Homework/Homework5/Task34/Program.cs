@@ -28,7 +28,7 @@ for (int i = 0; i < array.Length; i++)
 }
 return count;
 }
-int quantity = check(array);
-Console.WriteLine($"Количество четных чисел в массиве равно {quantity}");
+
+Console.WriteLine($"Количество четных чисел в массиве равно {check(array)}");
 
 
