@@ -6,12 +6,12 @@ Console.WriteLine("Введите число столбцов: ");
 int columns = int.Parse(Console.ReadLine());
 double[,] matrix = new double[row, columns];
 
+PrintArray(matrix);
 CreateArray(matrix);
-NewArray(matrix);
 
 
 
-void CreateArray(double[,] matr)
+void PrintArray(double[,] matr)
 {
 
  for (int i = 0; i < matr.GetLength(0); i++)
@@ -25,7 +25,7 @@ void CreateArray(double[,] matr)
 
 }
 
-double[,] NewArray(double[,] matr)
+double[,] CreateArray(double[,] matr)
 {
   for (int i = 0; i < matr.GetLength(0); i++)
  {
