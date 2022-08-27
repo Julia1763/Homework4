@@ -1,4 +1,5 @@
 ﻿/* Задайте двумерный массив размером m×n, заполненный случайными вещественными числами. */ 
+
 Console.WriteLine("Введите число строк: ");
 int row = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите число столбцов: ");
@@ -10,9 +11,6 @@ NewArray(matrix);
 
 
 
-
-
-
 void CreateArray(double[,] matr)
 {
 
@@ -20,20 +18,24 @@ void CreateArray(double[,] matr)
  {
     for (int j = 0; j < matr.GetLength(1); j++)
     {
-        Console.Write($"{matr[i,j]} ");
+        Console.Write(matr[i, j] + " ");
     }
+    Console.WriteLine("");
  }
-Console.WriteLine("");
+
 }
 
-void NewArray(double[,] matr)
+double[,] NewArray(double[,] matr)
 {
   for (int i = 0; i < matr.GetLength(0); i++)
  {
     for (int j = 0; j < matr.GetLength(1); j++)
     {
-        matr[i,j] = new Random().NextDouble(-1,5);
+        matr[i, j] = new Random().Next(-10, 10);
+        Console.Write(matr[i, j] + " ");
     }  
+Console.WriteLine("");
 }
+return matr;
 }
 
