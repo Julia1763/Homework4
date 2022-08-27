@@ -6,9 +6,9 @@ Console.WriteLine("Введите число столбцов: ");
 int columns = int.Parse(Console.ReadLine());
 double[,] matrix = new double[row, columns];
 
-PrintArray(matrix);
-CreateArray(matrix);
+double[,] Matrix = CreateArray(matrix);
 
+PrintArray(Matrix);
 
 
 void PrintArray(double[,] matr)
@@ -32,9 +32,7 @@ double[,] CreateArray(double[,] matr)
     for (int j = 0; j < matr.GetLength(1); j++)
     {
         matr[i, j] = new Random().Next(-10, 10);
-        Console.Write(matr[i, j] + " ");
     }  
-Console.WriteLine("");
 }
 return matr;
 }
