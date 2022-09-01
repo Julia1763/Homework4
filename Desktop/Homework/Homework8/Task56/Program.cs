@@ -18,6 +18,7 @@ int[,] Matrix = CreateArray(matrix);
 PrintArray(Matrix);
 Console.WriteLine("");
 SumOfRows(Matrix);
+MinOfRows(Matrix);
 
 
 
@@ -60,4 +61,30 @@ int[] SumOfRows (int[,] matr)
 }
 return sum;
 }
+
+int MinOfRows (int[,] matr)
+{
+    int Min = sum[0];
+for (int i = 0; i < matr.GetLength(0); i++) 
+{   
+  if (Min >= sum[i])
+  {
+    Min = sum[i];
+  }
+}
+return Min;
+}
+Console.WriteLine($"Сумма минимальной строки равна {MinOfRows(Matrix)}");
+
+/*int minSumLine = 0;
+int sumLine = SumLineElements(array, 0);
+for (int i = 1; i < array.GetLength(0); i++)
+{
+  int tempSumLine = SumLineElements(array, i);
+  if (sumLine > tempSumLine)
+  {
+    sumLine = tempSumLine;
+    minSumLine = i;
+  }
+}*/
 
