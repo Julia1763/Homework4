@@ -13,7 +13,7 @@ int SumOfMN (int M, int N)
     }
 }
 Console.WriteLine("Введите первое число: ");
-int FnumNer = int.Parse(Console.ReadLine());
+int Fnumber = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
-int SnumNer = int.Parse(Console.ReadLine());
-Console.WriteLine(SumOfMN(FnumNer, SnumNer));
+int Snumber = int.Parse(Console.ReadLine());
+Console.WriteLine(SumOfMN(Fnumber, Snumber));
