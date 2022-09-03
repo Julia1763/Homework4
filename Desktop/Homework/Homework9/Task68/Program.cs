@@ -9,6 +9,8 @@ if (m == 0) {
       return AckermannFunction(m-1, 1);
     } else if(m > 0 && n > 0){
       return AckermannFunction(m-1, AckermannFunction(m,n-1));
+    } else {
+      return AckermannFunction(m, n);
     }
 }
 
