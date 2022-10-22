@@ -11,7 +11,7 @@ def enter_surname(information):
    
 
 def enter_phone(information):
-    phone_number=int(input('Введите фамилию пользователя: '))
+    phone_number=int(input('Введите номер пользователя: '))
     return phone_number
 
 def data_collection(information = 1):

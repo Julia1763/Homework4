@@ -1,25 +1,19 @@
-from UI import name_view
-from UI import surname_view
-from UI import phone_view
+from UI import *
+import xml
+from xml import etree
 
 
-def create(device=1):
-    xml = '<xml>\n'
-    xml += '    <name units = "c">{}</name>\n'\
-        .format(name_view(device))
-    xml += '    <surname units = "m/s">{}</surname>\n'\
-        .format(surname_view(device))
-    xml += '    <phone units = "mmHg">{}</pressure>\n'\
-        .format(phone_view(device))
-    xml += '</xml>'
-
-    with open('data.xml', 'w') as page:
-        page.write(xml)
-
-    return xml
+def read(file):
+    data = []
+    with open(file, newline='') as xmlfile:
+        data_reader = etree.parse(filename)
+        for row in data_reader:
+            data.append(row[0], row[1], row[2], row[3])
+    return data
 
 
-def new_create(data, device = 1):
+
+def write_data(file, device = 1):
     n, s, p = data
     xml = '<xml>\n'
     xml += '    <name units = "f">{}</name>\n'\
@@ -32,5 +26,4 @@ def new_create(data, device = 1):
 
     with open('new_data.xml', 'w') as page:
         page.write(xml)
-
-    return data
+    return file
