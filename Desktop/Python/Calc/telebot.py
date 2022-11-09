@@ -56,15 +56,19 @@ def __message_handle(self, msg):
                 answer = "Operation is not supported."
                 try:
                     if input_text.lower()[0:5] == "/calc":
-                        answer = self.function_calc(input_text[6:])
+                        answer = self.__calculate(input_text[6:])
                     else:
-                        answer = self.function_calc(input_text)
+                        answer = self.__calculate(input_text)
+                except Exception as e:
+                    logger.critical('%s', e)
             try:
                 if (len(str(answer)) < 4096):
-                    self.Bot.sendMessage(chat_id, answer)
+                    self.bot.sendMessage(chat_id, answer)
                 else:
                     answer = "Operation result is too long."
-                    self.Bot.sendMessage(chat_id, answer) 
+                    self.bot.sendMessage(chat_id, answer) 
+            except Exception as e:
+                logger.critical('%s', e)
                 return None
 Bot.polling()
 
