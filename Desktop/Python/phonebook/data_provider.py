@@ -1,8 +1,4 @@
 
-import pickle
-
-from Phone_book.logger import phone_number
-Dict = {}
 
 def enter_name(information):
     name=input('Введите имя пользователя: ')
@@ -15,7 +11,7 @@ def enter_surname(information):
    
 
 def enter_phone(information):
-    phone_number=int(input('Введите фамилию пользователя: '))
+    phone_number=int(input('Введите номер пользователя: '))
     return phone_number
 
 def data_collection(information = 1):
