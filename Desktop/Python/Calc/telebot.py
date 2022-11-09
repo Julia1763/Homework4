@@ -1,8 +1,8 @@
 import telebot
 import logging
 import time
-Bot = telebot.TeleBot('5646645837:AAEd5qJn4NvSQ0xrsSfSV3gCAZmpPq_GoLM')
-@Bot.message_handler(commands=['/start'])
+Bot = telebot.TeleBot('')
+Bot.message_handler(commands=['/start'])
 
 def start_message(message):
     Bot.send_message(message.chat.id, 'Добро пожаловать!')
@@ -43,11 +43,6 @@ def Bot_info(self):
 
 Bot.polling()
 
-def __enter__(self):
-        self.Bot.message_loop(self.__message_handle)
-        while 1:
-            time.sleep(10)
-
 def __message_handle(self, msg):
         content_type, chat_type, chat_id = telebot.glance(msg)
         logger.debug('Content Type: %s; Chat Type: %s; Chat ID: %s', \
@@ -72,6 +67,13 @@ def __message_handle(self, msg):
                     self.Bot.sendMessage(chat_id, answer) 
                 return None
 Bot.polling()
+
+def __enter__(self):
+        self.Bot.message_loop(self.__message_handle)
+        while 1:
+            time.sleep(10)
+
+
 
 def function_calc(f_value, s_value, oper):
     if oper == '+':
